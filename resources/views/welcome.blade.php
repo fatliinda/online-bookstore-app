@@ -36,36 +36,33 @@
 
 
     <!-- Hero Section -->
-    <section id="hero" class='bg-pinkBg'>
-      <!-- Flex Container -->
-      <div
-        class="container flex flex-col-reverse items-center py-24 px-12 mx-auto  space-y-0 md:space-y-0 md:flex-row"
-      >
-        <!-- Left item -->
-        <div class="flex flex-col mb-12 space-y-12 md:w-1/2">
-        <p class="max-w-sm text-center text-darkGrayishBlue md:text-left">
-            The bookwaorms editor
-          </p>
-          <h1
-            class="max-w-md text-2xl font-light text-center md:text-5xl md:text-left"
-          >
-            Featured books of this month
-          </h1>
-          
-          <div class="flex justify-center md:justify-start">
-            <a
-              href="#"
-              class="p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight"
-              >Get Started</a
-            >
-          </div>
-        </div>
-        <!-- Image -->
-        <div class="md:w-1/2">
-          <img src="assets/photos/hero.jpg" alt="" />
-        </div>
+    <section id="hero" class="bg-pinkBg">
+  <!-- Flex Container -->
+  <div class="container flex flex-col-reverse items-center py-12 px-12 mx-auto space-y-0 md:space-y-0 md:flex-col ">
+    <!-- Left item (Text Section) -->
+    <div class="flex flex-col items-center space-y-6 md:w-1/2 h-24">
+      
+      <h1 class="max-w-md text-xl font-middle text-center md:text-5xl ">
+        This Month
+      </h1>
+      <p class="max-w-sm text-center text-darkGrayishBlue">
+        The bookworms editor Lorem ipsum dolor sit!
+      </p>
+      <div class="flex justify-center md:justify-start">
+        <a href="#" class="p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight">
+          Get Started
+        </a>
       </div>
-    </section>
+    </div>
+
+    <!-- Right item (Image Section with 3 Images) -->
+    <div class="flex  justify-center md:w-full space-x-6">
+      <img src="{{ asset('images/books-removebg.png') }}" alt="Book 1" class="w-full max-w-2xl h-full rounded-lg ">
+     
+  </div>
+</section>
+
+
 
   </body>
 </html>
