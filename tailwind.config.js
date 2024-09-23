@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        brightRed: 'hsl(12, 88%, 59%)',
+        brightRed: '#D95F59',
         pinkBg: '#f5cac3',
         brightRedLight: 'hsl(12, 88%, 69%)',
         brightRedSupLight: 'hsl(12, 88%, 95%)',
