@@ -36,36 +36,32 @@
 
 
     <!-- Hero Section -->
-    <section id="hero">
-      <!-- Flex Container -->
-      <div
-        class="container flex flex-col-reverse justify-evenly items-center px-6 mx-auto mt-10 space-y-0 md:space-y-0 md:flex-row "
-      >
-        <!-- Left item -->
-        <div class="flex mt-9 flex-col mb-32 space-y-12 md:w-1/2">
-          <h1
-            class="max-w-md text-4xl font-bold text-center md:text-5xl md:text-left"
-          >
-            Best books of this month
-          </h1>
-          <p class="max-w-sm text-center text-darkGrayishBlue md:text-left">
-            Click to learn more and read the books that will change your life
-          </p>
-          <div class="flex justify-center md:justify-start">
-            <a
-              href="#"
-              class="p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight"
-              >Get Started</a
-            >
-          </div>
+    <div class="bg-pinkBg py-20">
+    <div class="container mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 lg:w-2/3">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl text-white font-bold mb-6">
+                    For all your <br class="hidden md:block" />
+                    <span class="text-brightRed">reading</span> needs
+                </h1>
+                <p class="text-lg md:text-xl lg:text-2xl text-gray-400 mb-8">
+                    Expand your mind reading a book.
+                </p>
+                <div class="flex gap-2">
+                    <a href="#" class="bg-brightRed hover:bg-red-500 text-white font-bold py-3 px-6 rounded-md">Get
+                        Started
+                    </a>
+                    <a href="#" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-md">Learn
+                        More
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 lg:w-1/3 mt-8 md:mt-0">
+                <img src="images/books-removebg.png" alt="Hero Image" class="rounded-lg " />
+            </div>
         </div>
-        <!-- Image -->
-        <div class="md:w-1/2">
-        <img src="{{ asset('images/books-removebg.png') }}" alt="Book 1" class="w-full max-w-2xl h-full rounded-lg ">
-     
-        </div>
-      </div>
-    </section>
+    </div>
+</div>
 <section id='new-books'>
   <div class='container flex flex-col items-center pt-16 px-12 mx-auto'>
     <div class='flex flex-col items-center justify-center text-center space-y-6 w-1/2'>
@@ -197,7 +193,7 @@
       </div>
       <div class="group relative">
         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-          <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men's Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+          <img src="images/book5.jpg" alt="Front of men's Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
         </div>
         <div class="mt-4 flex justify-between">
           <div>
@@ -214,7 +210,7 @@
 </div>
 <div class="group relative">
         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-          <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men's Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+          <img src="images/book6.png" alt="Front of men's Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
         </div>
         <div class="mt-4 flex justify-between">
           <div>
@@ -231,7 +227,7 @@
 </div>
 <div class="group relative">
         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-          <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men's Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+          <img src="images/book7.jpg" alt="Front of men's Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
         </div>
         <div class="mt-4 flex justify-between">
           <div>
@@ -276,52 +272,53 @@
   </div>
   <div class="flex flex-col justify-evenly items-center md:flex-row md:mt-8">
   <!-- Author 1 -->
-  <div class="flex flex-col items-center">
-    <div class="w-24 h-24 rounded-full bg-black text-white flex justify-center items-center">
-      <span>Author 1</span>
-    </div>
-    <span class="mt-2 text-light">Author 1</span>
+  <div class="flex flex-col items-center mt-4 md:mt-0 md:ml-4">
+  <div class="w-24 h-24 rounded-full bg-black flex justify-center items-center overflow-hidden">
+    <img src='images/fk.jpg' class="w-full h-full object-cover">
   </div>
+  <span class="mt-2 text-light">Author 3</span>
+</div>
 
   <!-- Author 2 -->
   <div class="flex flex-col items-center mt-4 md:mt-0 md:ml-4">
-    <div class="w-24 h-24 rounded-full bg-black text-white flex justify-center items-center">
-      <span>Author 2</span>
-    </div>
-    <span class="mt-2 text-light">Author 2</span>
+  <div class="w-24 h-24 rounded-full bg-black flex justify-center items-center overflow-hidden">
+    <img src='images/ac.jpg' class="w-full h-full object-cover">
   </div>
+  <span class="mt-2 text-light">Author 3</span>
+</div>
 
   <!-- Author 3 -->
   <div class="flex flex-col items-center mt-4 md:mt-0 md:ml-4">
-    <div class="w-24 h-24 rounded-full bg-black text-white flex justify-center items-center">
-      <span>Author 3</span>
-    </div>
-    <span class="mt-2 text-light">Author 3</span>
+  <div class="w-24 h-24 rounded-full bg-black flex justify-center items-center overflow-hidden">
+    <img src='images/gr.jpg' class="w-full h-full object-cover">
   </div>
+  <span class="mt-2 text-light">Author 3</span>
+</div>
+
 
   <!-- Author 4 -->
   <div class="flex flex-col items-center mt-4 md:mt-0 md:ml-4">
-    <div class="w-24 h-24 rounded-full bg-black text-white flex justify-center items-center">
-      <span>Author 4</span>
-    </div>
-    <span class="mt-2 text-light">Author 4</span>
+  <div class="w-24 h-24 rounded-full bg-black flex justify-center items-center overflow-hidden">
+    <img src='images/fd.jpg' class="w-full h-full object-cover">
   </div>
+  <span class="mt-2 text-light">Author 3</span>
+</div>
 
   <!-- Author 5 -->
   <div class="flex flex-col items-center mt-4 md:mt-0 md:ml-4">
-    <div class="w-24 h-24 rounded-full bg-black text-white flex justify-center items-center">
-      <span>Author 5</span>
-    </div>
-    <span class="mt-2 text-light">Author 5</span>
+  <div class="w-24 h-24 rounded-full bg-black flex justify-center items-center overflow-hidden">
+    <img src='images/hm.jpg' class="w-full h-full object-cover">
   </div>
+  <span class="mt-2 text-light">Author 3</span>
+</div>
 
   <!-- Author 6 -->
   <div class="flex flex-col items-center mt-4 md:mt-0 md:ml-4">
-    <div class="w-24 h-24 rounded-full bg-black text-white flex justify-center items-center">
-      <span>Author 6</span>
-    </div>
-    <span class="mt-2 text-light">Author 6</span>
+  <div class="w-24 h-24 rounded-full bg-black flex justify-center items-center overflow-hidden">
+    <img src='images/jk.jpg' class="w-full h-full object-cover">
   </div>
+  <span class="mt-2 text-light">Author 3</span>
+</div>
 </div>
 
     </div>
