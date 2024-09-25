@@ -13,10 +13,10 @@ class AuthorSeeder extends Seeder
      */
     public function run(): void
     {
-        Author::create(['name' => 'Penelope Douglas']);
-        Author::create(['name' => 'Hanya Yanagihara']);
-        Author::create(['name' => 'Mat Burgess']);
-        Author::create(['name' => 'Benjamin Graham']);
-        Author::create(['name' => 'James Clear']);
+        Author::create(['name' => 'Penelope Douglas','image_path'=>'images/pd.jpg']);
+        Author::create(['name' => 'Hanya Yanagihara','image_path'=>'images/hw.jpg']);
+        Author::create(['name' => 'Mat Burgess','image_path'=>'images/mb.jpg']);
+        Author::create(['name' => 'Benjamin Graham','image_path'=>'images/bg.jpg']);
+        Author::create(['name' => 'James Clear','image_path'=>'images/jc.jpg']);
     }
 }

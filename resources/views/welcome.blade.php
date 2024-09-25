@@ -175,7 +175,7 @@
 <div class='container flex flex-col items-center pt-16 px-12 mx-auto'>
     <div class='flex flex-col items-center justify-center text-center space-y-6 w-1/2'>
       <h1 class="max-w-md text-xl font-medium text-center md:text-5xl">
-        Authors by Generes
+        Authors
       </h1>
       <p class="max-w-sm text-center text-darkGrayishBlue">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. A nisi possimus quasi natus est accusantium repudiandae deserunt!
@@ -183,56 +183,17 @@
     </div>
   </div>
   <div class="flex flex-col justify-evenly items-center md:flex-row md:mt-8">
-  <!-- Author 1 -->
+  <!-- Author-->
+   @foreach($authors as $author)
   <div class="flex flex-col items-center mt-4 md:mt-0 md:ml-4">
   <div class="w-24 h-24 rounded-full bg-black flex justify-center items-center overflow-hidden">
-    <img src='images/fk.jpg' class="w-full h-full object-cover">
+    <img src='{{$author->image_path}}' class="w-full h-full object-cover">
   </div>
-  <span class="mt-2 text-light">Author 3</span>
+  <span class="mt-2 text-light">{{$author->name}}</span>
 </div>
-
-  <!-- Author 2 -->
-  <div class="flex flex-col items-center mt-4 md:mt-0 md:ml-4">
-  <div class="w-24 h-24 rounded-full bg-black flex justify-center items-center overflow-hidden">
-    <img src='images/ac.jpg' class="w-full h-full object-cover">
-  </div>
-  <span class="mt-2 text-light">Author 3</span>
+@endforeach
+  
 </div>
-
-  <!-- Author 3 -->
-  <div class="flex flex-col items-center mt-4 md:mt-0 md:ml-4">
-  <div class="w-24 h-24 rounded-full bg-black flex justify-center items-center overflow-hidden">
-    <img src='images/gr.jpg' class="w-full h-full object-cover">
-  </div>
-  <span class="mt-2 text-light">Author 3</span>
-</div>
-
-
-  <!-- Author 4 -->
-  <div class="flex flex-col items-center mt-4 md:mt-0 md:ml-4">
-  <div class="w-24 h-24 rounded-full bg-black flex justify-center items-center overflow-hidden">
-    <img src='images/fd.jpg' class="w-full h-full object-cover">
-  </div>
-  <span class="mt-2 text-light">Author 3</span>
-</div>
-
-  <!-- Author 5 -->
-  <div class="flex flex-col items-center mt-4 md:mt-0 md:ml-4">
-  <div class="w-24 h-24 rounded-full bg-black flex justify-center items-center overflow-hidden">
-    <img src='images/hm.jpg' class="w-full h-full object-cover">
-  </div>
-  <span class="mt-2 text-light">Author 3</span>
-</div>
-
-  <!-- Author 6 -->
-  <div class="flex flex-col items-center mt-4 md:mt-0 md:ml-4">
-  <div class="w-24 h-24 rounded-full bg-black flex justify-center items-center overflow-hidden">
-    <img src='images/jk.jpg' class="w-full h-full object-cover">
-  </div>
-  <span class="mt-2 text-light">Author 3</span>
-</div>
-</div>
-
     </div>
 </section>
 
