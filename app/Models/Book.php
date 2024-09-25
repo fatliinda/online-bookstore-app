@@ -15,4 +15,8 @@ class Book extends Model
         'image_path',
 
     ];
+
+    public function author(){
+        return $this->belongsTo(Author::class);
+    }
 }

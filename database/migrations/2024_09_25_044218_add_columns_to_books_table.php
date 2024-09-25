@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::table('books', function (Blueprint $table) {
             $table->string('title')->nullable(false);
-            $table->string('author')->nullable(false);
             $table->text('description')->nullable(false);
             $table->decimal('price', 8, 2)->nullable(false);
             $table->string('image_path')->nullable(); 
+            $table->unsignedBigInteger('author_id')->nullable(); 
+            $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade');
         });
     }
 
