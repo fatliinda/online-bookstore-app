@@ -33,7 +33,17 @@
     </button>
   </div>
 </nav>
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 
+@if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
 
     <!-- Hero Section -->
     <div class="bg-pinkBg py-20">
@@ -57,7 +67,7 @@
                 </div>
             </div>
             <div class="md:w-1/2 lg:w-1/3 mt-8 md:mt-0">
-                <img src="images/books-removebg.png" alt="Hero Image" class="rounded-lg " />
+                <img src="images/bookshelves.png" alt="Hero Image" class="rounded-lg " />
             </div>
         </div>
     </div>
@@ -77,32 +87,33 @@
   <!-- Adjusted mt-2 to mt-6 for less space -->
   <div class="mx-auto mt-4 max-w-2xl px-4 py-8 sm:px-6 lg:max-w-7xl lg:px-8">
     <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-    @foreach($newBooks as $newbook)
-<div class="group relative">
-    <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-        <img src="{{$newbook->image_path}}" alt="Image of {{$newbook->title}}" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-    </div>
-    <div class="mt-4 flex justify-between">
-        <div>
-            <h3 class="text-sm text-gray-700">
-                <a href="#">
-                    <span aria-hidden="true" class="absolute inset-0"></span>
-                    {{$newbook->title}}
-                </a>
-            </h3>
-            <p class="mt-1 text-sm text-gray-500">{{$newbook->author->name}}</p>
+    
+      @foreach($newBooks as $newbook)
+      <div class="group relative bg-white border border-gray-200 rounded-lg shadow-lg p-4">
+        
+        <!-- Book Image -->
+        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 ">
+          <img src="{{$newbook->image_path}}" alt="Image of {{$newbook->title}}" class="h-full w-full object-cover object-center">
         </div>
-        <div class='block mb-22'>
-            <p class="text-sm font-medium text-gray-900">{{$newbook->price}}$</p>
-        </div>
-    </div>
 
-    <!-- Add to Cart Button -->
-    <button class='text-white bg-brightRed text-lg w-full py-2 mt-4'>
-        Add to Cart
-    </button>
-</div>
-@endforeach
+        <!-- Book Details -->
+        <div class="mt-4 flex flex-col">
+          <h3 class="text-sm font-bold text-gray-700">
+            {{$newbook->title}}
+          </h3>
+          <p class="mt-1 text-sm text-gray-500">{{$newbook->author->name}}</p>
+          <p class="mt-1 text-sm font-medium text-gray-900">{{$newbook->price}}$</p>
+        </div>
+
+        <!-- Add to Cart Button -->
+        <form action="{{ route('cart-add', $newbook->id) }}" method="POST" class="mt-4">
+          @csrf
+          <button type="submit" class="bg-brightRed text-white text-lg w-full py-2 hover:bg-red-600 transition">
+            Add to Cart
+          </button>
+        </form>
+      </div>
+      @endforeach
       
     </div>
   </div>
