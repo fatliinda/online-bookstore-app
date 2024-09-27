@@ -8,6 +8,7 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
+@include('partials.flash')
     <!-- Navbar -->
     <nav class="flex items-center justify-between p-4">
   <!-- Logo Section -->
@@ -23,21 +24,12 @@
     <a href="#" class="hover:text-gray-400">Contact</a>
   </div>
 
-  <!-- Search Bar -->
-  <div class="flex items-center">
-    <input type="text" placeholder="Search" class="hidden md:block p-2 rounded-md text-black">
-    <button class="ml-2 p-2 bg-gray-700 rounded-md hover:bg-gray-600">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-      </svg>
-    </button>
-  </div>
+ 
+  <a href="{{ route('cart-show') }}">
+  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</a>
 </nav>
-@if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
+
 
 @if (session('error'))
     <div class="alert alert-danger">
@@ -89,30 +81,35 @@
     <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
     
       @foreach($newBooks as $newbook)
-      <div class="group relative bg-white border border-gray-200 rounded-lg shadow-lg p-4">
-        
-        <!-- Book Image -->
-        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 ">
-          <img src="{{$newbook->image_path}}" alt="Image of {{$newbook->title}}" class="h-full w-full object-cover object-center">
+      <div class="group relative flex flex-col h-full">
+    <!-- Book Image -->
+    <a href="{{ route('book-show', $newbook->id) }}">
+    <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+        <img src="{{$newbook->image_path}}" alt="Image of {{$newbook->title}}" class="h-full w-full object-contain object-center lg:h-full lg:w-full">
+    </div>
+</a>
+    <!-- Book Details with Flex-grow to make the title and author take equal space -->
+    <div class="mt-4 flex-grow flex flex-col justify-between">
+        <div>
+            <h3 class="text-sm text-gray-700">
+                {{$newbook->title}}
+            </h3>
+            <p class="mt-1 text-sm text-gray-500">{{$newbook->author->name}}</p>
         </div>
-
-        <!-- Book Details -->
-        <div class="mt-4 flex flex-col">
-          <h3 class="text-sm font-bold text-gray-700">
-            {{$newbook->title}}
-          </h3>
-          <p class="mt-1 text-sm text-gray-500">{{$newbook->author->name}}</p>
-          <p class="mt-1 text-sm font-medium text-gray-900">{{$newbook->price}}$</p>
+        <div class='block mb-4'>
+            <p class="text-sm font-medium text-gray-900">{{$newbook->price}}$</p>
         </div>
+    </div>
 
-        <!-- Add to Cart Button -->
-        <form action="{{ route('cart-add', $newbook->id) }}" method="POST" class="mt-4">
-          @csrf
-          <button type="submit" class="bg-brightRed text-white text-lg w-full py-2 hover:bg-red-600 transition">
+    <!-- Add to Cart Button -->
+    <form action="{{ route('cart-add', $newbook->id) }}" method="POST" class="mt-4">
+        @csrf
+        <button type="submit" class="bg-brightRed text-white text-lg w-full py-2 hover:bg-red-600 transition">
             Add to Cart
-          </button>
-        </form>
-      </div>
+        </button>
+    </form>
+</div>
+
       @endforeach
       
     </div>

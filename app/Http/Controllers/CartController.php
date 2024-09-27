@@ -26,4 +26,9 @@ class CartController extends Controller
 
         return redirect()->back()->with('success', 'Book added to cart!');
     }
+    public function show(){
+        $cart = session()->get('cart');
+
+        return view('cart',compact('cart'));
+    }
 }
