@@ -10,3 +10,4 @@ Route::get('/', [MainPageController::class,'index']);
 Route::post('/cart/add/{id}', [CartController::class, 'store'])->name('cart-add');
 Route::get('/book/{id}',[BookController::class,'show'])->name('book-show');
 Route::get('/cart',[CartController::class,'show'])->name('cart-show');
+Route::post('/cart-update/{id}', [CartController::class, 'updateCart'])->name('cart-update');
