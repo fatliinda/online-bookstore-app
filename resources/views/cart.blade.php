@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 <body>
 @include('partials.flash')
@@ -90,11 +91,17 @@
                             ${{ array_sum(array_map(function($item) { return $item['price'] * $item['quantity']; }, session('cart', []))) + 1.99 }}
                         </span>
                     </div>
-                    <button class="bg-brightRed text-white py-2 px-4 rounded-lg mt-4 w-full">Checkout</button>
+                    <!-- Checkout Button -->
+                    <a href="{{ route('view-checkout') }}" class="bg-brightRed text-white py-2 px-4 rounded-lg mt-4 w-full text-center block">
+                         Checkout
+                    </a>
+
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 </body>
 </html>
