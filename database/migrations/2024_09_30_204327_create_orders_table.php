@@ -16,8 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();  
             $table->string('name');
             $table->string('email');
-            $table->string('state');
-            $table->string('city');
+            $table->string('address');
             $table->string('phone');
             $table->decimal('total_price', 10, 2);  
             $table->timestamps();
