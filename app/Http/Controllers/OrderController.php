@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\OrderItem;
 
@@ -19,7 +18,7 @@ class OrderController extends Controller
         }, $cart));
 
         $order = Order::create([
-            'user_id' =>  1,
+            'user_id' => auth()->check() ? auth()->id() : null,
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'address' => $validatedData['address'],
@@ -37,7 +36,7 @@ class OrderController extends Controller
         }
 
         session()->forget('cart');
-        return redirect()->route('welcome')->with('success', 'Order placed successfully!');
+        return redirect()->route('index')->with('success', 'Order placed successfully!');
     }
 }
 

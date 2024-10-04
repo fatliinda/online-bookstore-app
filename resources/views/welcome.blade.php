@@ -18,7 +18,7 @@
 
   <!-- Navigation Links -->
   <div class="hidden md:flex space-x-6">
-    <a href="#" class="hover:text-gray-400">Home</a>
+    <a href="#" class="hover:text-gray-400">Dashboard</a>
     <a href="#" class="hover:text-gray-400">About</a>
     <a href="#" class="hover:text-gray-400">Services</a>
     <a href="#" class="hover:text-gray-400">Contact</a>
@@ -248,7 +248,7 @@
         <!-- List Container -->
         <div class="flex justify-around space-x-32">
           <div class="flex flex-col space-y-3 text-white">
-            <a href="#" class="hover:text-brightRed">Home</a>
+            <a href="#" class="hover:text-brightRed">Dashboard</a>
             <a href="#" class="hover:text-brightRed">Pricing</a>
             <a href="#" class="hover:text-brightRed">Products</a>
             <a href="#" class="hover:text-brightRed">About</a>
