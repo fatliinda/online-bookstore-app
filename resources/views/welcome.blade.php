@@ -18,9 +18,9 @@
 
   <!-- Navigation Links -->
   <div class="hidden md:flex space-x-6">
-    <a href="#" class="hover:text-gray-400">Dashboard</a>
-    <a href="#" class="hover:text-gray-400">About</a>
-    <a href="#" class="hover:text-gray-400">Services</a>
+    <a href="#" class="hover:text-gray-400">Home</a>
+    <a href="#" class="hover:text-gray-400">Books</a>
+    <a href="#" class="hover:text-gray-400">Authors</a>
     <a href="#" class="hover:text-gray-400">Contact</a>
   </div>
 
@@ -127,58 +127,8 @@
     </div>
   </div>
 </section>
-<section id='best-selling'>
-<div class='container flex flex-col items-center pt-16 px-12 mx-auto'>
-    <div class='flex flex-col items-center justify-center text-center space-y-6 w-1/2'>
-      <h1 class="max-w-md text-xl font-medium text-center md:text-5xl">
-        Best Selling Books
-      </h1>
-      <p class="max-w-sm text-center text-darkGrayishBlue">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. A nisi possimus quasi natus est accusantium repudiandae deserunt!
-      </p>
-    </div>
-  </div>
-  <div class="mx-auto mt-4 max-w-2xl px-4 py-8 sm:px-6 lg:max-w-7xl lg:px-8">
-    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-      @foreach($books as $book)
-      <div class="group relative">
-        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-          <img src="{{$book->image_path}}" alt="Front of men's Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        </div>
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-gray-700">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-                {{$book->title}}
-              </a>
-            </h3>
-            <p class="mt-1 text-sm text-gray-500">{{$book->price}}</p>
-          </div>
-          <p class="text-sm font-medium text-gray-900">{{$book->author->name}}</p>
-        </div>
-        <button class='text-white bg-brightRed text-lg w-full py-2 mt-4'>
-        Add to Cart
-    </button>
-      </div>
-      @endforeach
-    </div>
-    
-  </div>
 
-</section>
-<section class="relative h-80 bg-cover bg-center" style="background-image: url('images/books-cover.jpg');">
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-black opacity-50"></div>
 
-  <!-- Text content -->
-  <div class="relative z-10 flex justify-center items-center h-full text-white text-center">
-    <div>
-      <h1 class="text-4xl font-bold">Your Title</h1>
-      <p class="text-xl mt-4">Your descriptive text goes here</p>
-    </div>
-  </div>
-</section>
 <section id='authors'>
 <div class='container flex flex-col items-center pt-16 px-12 mx-auto'>
     <div class='flex flex-col items-center justify-center text-center space-y-6 w-1/2'>
