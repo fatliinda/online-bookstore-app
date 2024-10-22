@@ -13,6 +13,6 @@ class MainPageController extends Controller
         $books = Book::with('author')->get();
         $newBooks = Book::with('author')->orderBy('created_at', 'desc')->take(4)->get();
         $authors = Author::all();
-        return view('welcome', compact('books','newBooks','authors'));
+        return view('home', compact('books','newBooks','authors'));
 }
 }

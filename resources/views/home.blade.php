@@ -1,44 +1,11 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+@extends('layouts.app')
 
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body>
+@section('title', 'Home Page')
+
+@section('content')
 @include('partials.flash')
-    <!-- Navbar -->
-    <nav class="flex items-center justify-between p-4">
-  <!-- Logo Section -->
-  <div class="flex-shrink-0 text-xl font-bold">
-  B <i class=" text-brightRed fa-solid fa-book-open"></i> kstore
-  </div>
 
-  <!-- Navigation Links -->
-  <div class="hidden md:flex space-x-6">
-    <a href="#" class="hover:text-gray-400">Home</a>
-    <a href="#" class="hover:text-gray-400">Books</a>
-    <a href="#" class="hover:text-gray-400">Authors</a>
-    <a href="#" class="hover:text-gray-400">Contact</a>
-  </div>
-
- 
-  <a href="{{ route('cart-show') }}">
-  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-</a>
-</nav>
-
-
-@if (session('error'))
-    <div class="alert alert-danger">
-        {{ session('error') }}
-    </div>
-@endif
-
-    <!-- Hero Section -->
-    <div class="bg-pinkBg py-20">
+<div class="bg-pinkBg py-20">
     <div class="container mx-auto px-6 md:px-12">
         <div class="flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 lg:w-2/3">
@@ -154,83 +121,14 @@
 </div>
     </div>
 </section>
+@endsection
 
-<footer class="bg-veryDarkBlue">
-      <!-- Flex Container -->
-      <div
-        class="container mt-10 flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0"
-      >
-        <!-- Logo and social links container -->
-        <div
-          class="flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:space-y-0 md:items-start"
-        >
-          <div class="mx-auto my-6 text-center text-white md:hidden">
-            Copyright &copy; 2024, All Rights Reserved
-          </div>
-          <!-- Logo -->
-          <div class='text-white'>
-          B <i class=" text-brightRed fa-solid fa-book-open"></i> kstore
-          </div>
-          <!-- Social Links Container -->
-          <div class="flex justify-center space-x-4">
-            <!-- Link 1 -->
-            <a href="#">
-              <img src="img/icon-facebook.svg" alt="" class="h-8" />
-            </a>
-            <!-- Link 2 -->
-            <a href="#">
-              <img src="img/icon-youtube.svg" alt="" class="h-8" />
-            </a>
-            <!-- Link 3 -->
-            <a href="#">
-              <img src="img/icon-twitter.svg" alt="" class="h-8" />
-            </a>
-            <!-- Link 4 -->
-            <a href="#">
-              <img src="img/icon-pinterest.svg" alt="" class="h-8" />
-            </a>
-            <!-- Link 5 -->
-            <a href="#">
-              <img src="img/icon-instagram.svg" alt="" class="h-8" />
-            </a>
-          </div>
-        </div>
-        <!-- List Container -->
-        <div class="flex justify-around space-x-32">
-          <div class="flex flex-col space-y-3 text-white">
-            <a href="#" class="hover:text-brightRed">Dashboard</a>
-            <a href="#" class="hover:text-brightRed">Pricing</a>
-            <a href="#" class="hover:text-brightRed">Products</a>
-            <a href="#" class="hover:text-brightRed">About</a>
-          </div>
-          <div class="flex flex-col space-y-3 text-white">
-            <a href="#" class="hover:text-brightRed">Careers</a>
-            <a href="#" class="hover:text-brightRed">Community</a>
-            <a href="#" class="hover:text-brightRed">Privacy Policy</a>
-          </div>
-        </div>
 
-        <!-- Input Container -->
-        <div class="flex flex-col justify-between">
-          <form>
-            <div class="flex space-x-3">
-              <input
-                type="text"
-                class="flex-1 px-4 rounded-full focus:outline-none"
-                placeholder="Updated in your inbox"
-              />
-              <button
-                class="px-6 py-2 text-white rounded-full bg-brightRed hover:bg-brightRedLight focus:outline-none"
-              >
-                Go
-              </button>
-            </div>
-          </form>
-          <div class="hidden text-white md:block">
-            Copyright &copy; 2024, All Rights Reserved
-          </div>
-        </div>
-      </div>
-</footer>
-  </body>
-</html>
+
+
+
+
+
+
+
+   

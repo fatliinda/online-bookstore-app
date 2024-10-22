@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+@extends('layouts.app')
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+@section('title', 'Home')
 
-</head>
-<body>
+@section('content')
+
+
 @include('partials.flash')
 <div class="h-screen py-8">
     <div class="container mx-auto px-4">
@@ -102,6 +98,4 @@
         </div>
     </div>
 </div>
-
-</body>
-</html>
+@endsection

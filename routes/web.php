@@ -6,6 +6,8 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\AdminController;
+use App\Http\Middleware\AdminMiddleware;
 
 Route::get('/', [MainPageController::class,'index'])->name('index');
 Route::post('/cart/add/{id}', [CartController::class, 'store'])->name('cart-add');
@@ -15,9 +17,9 @@ Route::post('/cart-update/{id}', [CartController::class, 'updateCart'])->name('c
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout');
 Route::get('/view/checkout',[CheckoutController::class,'show'])->name('view-checkout');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin-dashboard')->middleware(AdminMiddleware::class);
+   
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
