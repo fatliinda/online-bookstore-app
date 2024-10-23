@@ -6,6 +6,7 @@ use App\Models\Book;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
+use App\Models\Author;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -66,5 +67,27 @@ class BookController extends Controller
     public function destroy(Book $book)
     {
         //
+    }
+    public function adminIndex()
+    {
+        $books = Book::all(); 
+        return view('admin.books.index', compact('books'));
+    }
+    public function adminCreate()
+    {   $authors= Author::get();
+        return view('admin.books.create',compact('authors'));
+    }
+    public function adminEdit($id)
+    {
+        
+        $book = Book::with('author')->findOrFail($id);
+        $authors= Author::get();
+        return view('admin.books.edit', compact('book','authors'));
+    }
+    public function adminDestroy($id)
+    {
+        $book = Book::findOrFail($id);
+        $book->delete();
+        return redirect()->route('admin.books.index')->with('success', 'Book deleted successfully.');
     }
 }

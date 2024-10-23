@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\OrderItem;
-
-
+use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
@@ -37,6 +36,11 @@ class OrderController extends Controller
 
         session()->forget('cart');
         return redirect()->route('index')->with('success', 'Order placed successfully!');
+    }
+    public function adminIndex(Request $request)
+    {
+        $orders = Order::all(); 
+        return view('admin.orders.index', compact('orders'));
     }
 }
 
