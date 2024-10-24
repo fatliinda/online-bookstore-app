@@ -3,7 +3,7 @@
     B <i class="text-brightRed fa-solid fa-book-open"></i> kstore
   </div>
   <div class="hidden md:flex space-x-6">
-    <a href="#" class="hover:text-gray-400">Home</a>
+    <a href="{{route('index')}}" class="hover:text-gray-400">Home</a>
     <a href="#" class="hover:text-gray-400">Books</a>
     <a href="#" class="hover:text-gray-400">Authors</a>
     <a href="#" class="hover:text-gray-400">Contact</a>
